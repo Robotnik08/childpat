@@ -6,4 +6,5 @@
 
 body, html {
     @apply m-0 p-0 overflow-hidden;
+    background-image: linear-gradient(rgb(169, 169, 255), rgb(0, 0, 88));
 }

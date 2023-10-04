@@ -538,4 +538,5 @@ body, html {
   margin: 0px;
   overflow: hidden;
   padding: 0px;
+  background-image: linear-gradient(rgb(169, 169, 255), rgb(0, 0, 88));
 }
