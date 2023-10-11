@@ -4,7 +4,7 @@ export class Vector2 {
         this.y = y;
     }
     pythagoreanTheorem () {
-        return Math.sqrt(this.x * this.x + this.y * this.y);
+        return Math.sqrt(this.x**2 + this.y**2);
     }
 
     normalize () {

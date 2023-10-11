@@ -86,11 +86,18 @@ export class Canvas {
         pos = this.con(pos);
         size = this.con(size);
         this.#ctx.save();
-        this.#ctx.translate(pos.x + size.x / 2, pos.y + size.y / 2);
+        this.#ctx.translate(pos.x, pos.y);
         this.#ctx.rotate(angle * Math.PI / 180);
-        this.#ctx.drawImage(sprite.img, pos.x, pos.y, size.x, -size.y);
+        this.#ctx.drawImage(sprite.img, -size.x / 2, -size.y / 2, size.x, size.y);
         this.#ctx.restore();
 
+    }
+
+    drawText (text, pos, size) { 
+        pos = this.con(pos);
+        size = this.con(size);
+        this.#ctx.font = size.y + 'px Arial';
+        this.#ctx.fillText(text, pos.x, pos.y);
     }
     /**
      * @brief Converts a vector corresponding to the canvas size
@@ -98,6 +105,7 @@ export class Canvas {
      * @returns 
      */
     con (vec2) {
+        return vec2; // for now it's just a placeholder
         const screenRatio = window.innerWidth / window.innerHeight;
         const canvasRatio = this.#canvas.width / this.#canvas.height;
         if (screenRatio > canvasRatio) {
